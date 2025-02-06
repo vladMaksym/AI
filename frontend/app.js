@@ -11,15 +11,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 tasks.forEach(task => {
                 const li = document.createElement("li");
 
-                // Create a <p> element to wrap the task text
                 const taskText = document.createElement("p");
                 taskText.textContent = task.text;
                 taskText.style.textDecoration = task.completed ? "line-through" : "none";
 
-                // Append the <p> element to the <li>
                 li.appendChild(taskText);
 
-                // Create the buttons as before
                 const completeButton = document.createElement("button");
                 completeButton.textContent = "✔";
                 completeButton.onclick = () => updateTask(task.id, !task.completed);
@@ -28,11 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 deleteButton.textContent = "❌";
                 deleteButton.onclick = () => deleteTask(task.id);
 
-                // Append the buttons to the <li>
                 li.appendChild(completeButton);
                 li.appendChild(deleteButton);
 
-                // Append the <li> to the task list
                 taskList.appendChild(li);
                 });
             });
